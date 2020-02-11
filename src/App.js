@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Valentines from './Valentines'
+import GoodMatch from './GoodMatch'
 import BadMatch from './BadMatch'
 
 export default class App extends Component{
@@ -8,9 +8,8 @@ export default class App extends Component{
     super(props)
     // The state object holds information that can be displayed to the user and updated throughout the program
     this.state = {
-      // The percentage will be calculated with the calculatePercentage function below. For now, it is set as a neutral, empty string
-      percentage: "",
       // The handleChange methods update userName and loveName as the user types
+      tempKey: "",
       userName: "",
       loveName: ""
     }
@@ -28,29 +27,12 @@ export default class App extends Component{
     this.setState({ loveName: e.target.value })
   }
 
-  restartGame = () => {
-    // This method restarts the game by resetting this.state to it's original values.
-    // No need to modify this method
-    this.setState({
-      percentage: "",
-      userName: "",
-      loveName: ""
-    })
-  }
-
-  calculatePercentage = () => {
-    // You will do most of your logic in this method. It is up to you how you would like the calculation to work. Random numbers? Number of vowels in each name? The world is your oyster.
-    let percentage = 11
-    // You will want to set the state of "percentage" in this function so that it renders on the page as expected.
-    this.setState({ percentage: percentage })
-  }
-
-
+  // Add a method that returns information to your user by adding a key:value pair to the state object. This method should utilize the user inputs established in state.
 
   render(){
 
     // Destructuring this.state so that you may just use the following variables throughout your code
-    let { percentage,
+    let { tempKey,
           userName,
           loveName
         } = this.state
@@ -77,23 +59,11 @@ export default class App extends Component{
           />
           <br/>
 
-          {/* Button that calls the calculatePercentage method */}
           <button
             id = "submitButton"
             type = "submit"
-            onClick = { this.calculatePercentage }
           >
           Submit!
-          </button>
-          <br/>
-
-          {/* Button that calls the restartGame method */}
-          <button
-            id = "restartButton"
-            type = "submit"
-            onClick = { this.restartGame }
-          >
-          Try a different pair!
           </button>
 
           <div className = "results">
@@ -102,20 +72,20 @@ export default class App extends Component{
             <textarea
               id = "compatibility"
               placeholder = "???"
-              value = { percentage }
+              value = { userName }
             />
 
             {/* Conditional rendering, based on the return value of calculatePercentage */}
             {/* Feel free to go in and change the values here to fall in line with your desired matching criteria */}
-            { percentage <= 10 && percentage > 0 &&
+            { tempKey <= 10 && tempKey > 0 &&
               <div>
                 <BadMatch />
               </div>
             }
 
-            { percentage > 10 &&
+            { tempKey > 10 &&
               <div>
-                <Valentines />
+                <GoodMatch />
               </div>
             }
 
