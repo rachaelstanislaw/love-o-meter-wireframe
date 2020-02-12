@@ -3,7 +3,7 @@
 
 `npm install --save bootstrap`
 
-`npm install --save reactstrap react react-dom`
+`npm install --save reactstrap`
 
 - You will then need to import Bootstrap CSS in the `src/index.js` file:
 
