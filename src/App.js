@@ -66,30 +66,27 @@ export default class App extends Component{
           Submit!
           </button>
 
-          <div className = "results">
-            <p> Your compatibility percentage! </p>
+          <p> Your compatibility percentage! </p>
 
-            <textarea
-              id = "compatibility"
-              placeholder = "???"
-              value = { userName }
-            />
+          <textarea
+            id = "compatibility"
+            placeholder = "???"
+            value = { userName }
+          />
 
-            {/* Conditional rendering, based on the return value of calculatePercentage */}
-            {/* Feel free to go in and change the values here to fall in line with your desired matching criteria */}
-            { tempKey <= 10 && tempKey > 0 &&
-              <div>
-                <BadMatch />
-              </div>
-            }
+          {/* Conditional rendering, based on the return value of calculatePercentage */}
+          {/* Feel free to go in and change the values here to fall in line with your desired matching criteria */}
+          { tempKey <= 10 && tempKey > 0 &&
+            <div>
+              <BadMatch />
+            </div>
+          }
 
-            { tempKey > 10 &&
-              <div>
-                <GoodMatch />
-              </div>
-            }
-
-          </div>
+          { tempKey > 10 &&
+            <div>
+              <GoodMatch />
+            </div>
+          }
 
           {/* Go ahead and customize this info! */}
           <footer> [Dev name here] | LEARN Academy Alpha 2020 </footer>
