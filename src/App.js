@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import GoodMatch from './GoodMatch'
-import BadMatch from './BadMatch'
+import GoodMatch from './components/GoodMatch'
+import BadMatch from './components/BadMatch'
 
 export default class App extends Component{
   constructor(props){

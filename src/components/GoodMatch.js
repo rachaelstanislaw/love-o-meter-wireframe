@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 
 export default class Valentines extends Component{
   render(){
