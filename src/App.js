@@ -27,7 +27,7 @@ export default class App extends Component{
     this.setState({ loveName: e.target.value })
   }
 
-  // Add a method that returns information to your user by adding a key:value pair to the state object. This method should utilize the user inputs established in state.
+  // Add a method here that returns information to your user by adding a key:value pair to the state object. This method should utilize the user inputs established in state.
 
   render(){
 
@@ -38,7 +38,7 @@ export default class App extends Component{
         } = this.state
 
     return(
-      <React.Fragment>
+      <>
 
         <div id = "all">
           <h1 id = "title"> Love-O-Meter </h1>
@@ -92,7 +92,7 @@ export default class App extends Component{
           <footer> [Dev name here] | LEARN Academy Alpha 2020 </footer>
         </div>
 
-      </React.Fragment>
+      </>
     )
   }
 }
