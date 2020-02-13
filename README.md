@@ -1,3 +1,20 @@
+## This project should be styled using React strap.
+- After creating your react app and cd'ing into your project, you will need to run the following commands in your terminal:
+
+`npm install --save bootstrap`
+
+`npm install --save reactstrap`
+
+- You will then need to import Bootstrap CSS in the `src/index.js` file:
+
+`import 'bootstrap/dist/css/bootstrap.min.css';`
+
+- Once that's done, you can import the components you would like to use on your page via the following syntax:
+
+`import { Button } from 'reactstrap';`
+
+- Further documentation can be found at https://reactstrap.github.io/
+
 ## As a user, I can type my name and my crush's name into input fields
 - As a developer, I understand how the handleChange methods in my App.js file interact with the state object
 
